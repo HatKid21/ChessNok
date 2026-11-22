@@ -28,16 +28,16 @@ public class King extends AbstractPiece {
     for (Pos dir : DIRS) {
       checkPos = pos.add(dir);
       Cell checkCell = board.getCell(checkPos);
-      if (checkCell != null && checkCell.isEmpty()) {
+      if (checkCell == null) {
+        break;
+      }
+      if (checkCell.isEmpty()) {
         moves.add(checkPos);
       }
-      if (checkCell != null && !checkCell.isEmpty()) {
+      if (!checkCell.isEmpty()) {
         if (checkCell.getPiece().getTeam() != team) {
           moves.add(checkPos);
         }
-        break;
-      }
-      if (checkCell == null) {
         break;
       }
     }

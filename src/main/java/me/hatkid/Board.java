@@ -30,14 +30,18 @@ public class Board {
     if (x < 1 || x > 8 || y < 1 || y > 8) {
       return null;
     }
-    return cells[x - 1][y - 1];
+    return cells[y - 1][x - 1];
   }
 
   public void check() {
     for (int i = 0; i < cells.length; i++) {
       for (int j = 0; j < cells[0].length; j++) {
         Cell cell = cells[i][j];
-        System.out.println(cell.toString() + " : " + cell.getPiece());
+        if (!cell.isEmpty()) {
+          System.out.println(cell.toString() + " : " + cell.getPiece() + " " + cell.getPos());
+
+          System.out.println(cell.getPiece().getTeam() + " " + cell.getPiece().getAvailableMoves(this));
+        }
       }
     }
   }

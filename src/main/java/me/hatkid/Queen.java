@@ -29,16 +29,16 @@ public class Queen extends AbstractPiece {
       for (int i = 1; i < 8; i++) {
         checkPos = pos.add(dir.mult(i));
         Cell checkCell = board.getCell(checkPos);
-        if (checkCell != null && checkCell.isEmpty()) {
+        if (checkCell == null) {
+          break;
+        }
+        if (checkCell.isEmpty()) {
           moves.add(checkPos);
         }
-        if (checkCell != null && !checkCell.isEmpty()) {
+        if (!checkCell.isEmpty()) {
           if (checkCell.getPiece().getTeam() != team) {
             moves.add(checkPos);
           }
-          break;
-        }
-        if (checkCell == null) {
           break;
         }
       }

@@ -31,17 +31,15 @@ public class Knight extends AbstractPiece {
     for (Pos dir : DIRS) {
       checkPos = pos.add(dir);
       Cell checkCell = board.getCell(checkPos);
-      if (checkCell != null && checkCell.isEmpty()) {
-        moves.add(checkPos);
+      if (checkCell == null) {
+        continue;
       }
-      if (checkCell != null && !checkCell.isEmpty()) {
+      if (checkCell.isEmpty()) {
+        moves.add(checkPos);
+      } else {
         if (checkCell.getPiece().getTeam() != team) {
           moves.add(checkPos);
         }
-        break;
-      }
-      if (checkCell == null) {
-        break;
       }
     }
 
