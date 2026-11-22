@@ -1,4 +1,4 @@
-package me.hatkid;
+package me.hatkid.util;
 
 public enum Color {
   BLACK,

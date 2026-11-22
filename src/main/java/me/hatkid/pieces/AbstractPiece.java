@@ -1,4 +1,6 @@
-package me.hatkid;
+package me.hatkid.pieces;
+
+import me.hatkid.util.*;
 
 public abstract class AbstractPiece implements Piece {
 

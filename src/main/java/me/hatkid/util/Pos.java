@@ -1,16 +1,16 @@
-package me.hatkid;
+package me.hatkid.util;
 
 public record Pos(int x, int y) {
 
-  Pos add(Pos another) {
+  public Pos add(Pos another) {
     return new Pos(x + another.x, y + another.y);
   }
 
-  Pos sub(Pos another) {
+  public Pos sub(Pos another) {
     return new Pos(x - another.x, y - another.y);
   }
 
-  Pos mult(int factor) {
+  public Pos mult(int factor) {
     return new Pos(x * factor, y * factor);
   }
 

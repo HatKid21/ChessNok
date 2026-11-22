@@ -1,6 +1,14 @@
-package me.hatkid;
+package me.hatkid.map;
 
 import java.util.List;
+
+import me.hatkid.util.*;
+import me.hatkid.pieces.Bishop;
+import me.hatkid.pieces.King;
+import me.hatkid.pieces.Knight;
+import me.hatkid.pieces.Pawn;
+import me.hatkid.pieces.Queen;
+import me.hatkid.pieces.Rook;
 
 public class Board {
 

@@ -1,7 +1,10 @@
-package me.hatkid;
+package me.hatkid.pieces;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import me.hatkid.map.*;
+import me.hatkid.util.*;
 
 public class Rook extends AbstractPiece {
 

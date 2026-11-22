@@ -1,4 +1,7 @@
-package me.hatkid;
+package me.hatkid.pieces;
+
+import me.hatkid.map.*;
+import me.hatkid.util.*;
 
 import java.util.ArrayList;
 import java.util.List;

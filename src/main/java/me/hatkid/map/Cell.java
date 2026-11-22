@@ -1,4 +1,7 @@
-package me.hatkid;
+package me.hatkid.map;
+
+import me.hatkid.pieces.*;
+import me.hatkid.util.*;
 
 public class Cell {
 

@@ -1,7 +1,12 @@
-package me.hatkid;
+package me.hatkid.pieces;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import me.hatkid.map.Board;
+import me.hatkid.map.Cell;
+import me.hatkid.util.Color;
+import me.hatkid.util.Pos;
 
 public class King extends AbstractPiece {
 
