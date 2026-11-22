@@ -12,6 +12,6 @@ public interface Piece {
 
   Pos getPos();
 
-  List<Pos> getAvailableMoves();
+  List<Pos> getAvailableMoves(Board board);
 
 }

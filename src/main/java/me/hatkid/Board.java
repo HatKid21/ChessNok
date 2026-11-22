@@ -15,11 +15,22 @@ public class Board {
   private void initBoard() {
     for (int i = 0; i < cells.length; i++) {
       for (int j = 0; j < cells[0].length; j++) {
-        Color cellColor = (i + j) % 2 == 0 ? Color.WHITE : Color.BLACK;
-        cells[i][j] = new Cell(new Pos(j + 1, 8 - i), cellColor);
+        Color cellColor = (i + j) % 2 != 0 ? Color.WHITE : Color.BLACK;
+        cells[i][j] = new Cell(new Pos(j + 1, i + 1), cellColor);
         System.out.println(cells[i][j].toString());
       }
     }
+  }
+
+  public Cell getCell(Pos pos) {
+    return getCell(pos.x(), pos.y());
+  }
+
+  public Cell getCell(int x, int y) {
+    if (x < 1 || x > 8 || y < 1 || y > 8) {
+      return null;
+    }
+    return cells[x - 1][y - 1];
   }
 
   public void check() {
@@ -35,7 +46,7 @@ public class Board {
     // Pawns
     for (int i : List.of(2, 7)) {
       for (int j = 0; j < cells[0].length; j++) {
-        Cell cell = cells[8 - i][j];
+        Cell cell = cells[i - 1][j];
         Color color = i % 2 == 0 ? Color.WHITE : Color.BLACK;
         cell.setPiece(new Pawn(color, cell.getPos()));
       }
@@ -45,7 +56,7 @@ public class Board {
     for (int i : List.of(1, 8)) {
       for (int j : List.of(1, 8)) {
         Color color = i == 1 ? Color.WHITE : Color.BLACK;
-        Cell cell = cells[8 - i][8 - j];
+        Cell cell = cells[i - 1][j - 1];
         cell.setPiece(new Rook(color, cell.getPos()));
       }
     }
@@ -54,7 +65,7 @@ public class Board {
     for (int i : List.of(1, 8)) {
       for (int j : List.of(2, 7)) {
         Color color = i == 1 ? Color.WHITE : Color.BLACK;
-        Cell cell = cells[8 - i][8 - j];
+        Cell cell = cells[i - 1][j - 1];
         cell.setPiece(new Knight(color, cell.getPos()));
       }
     }
@@ -63,7 +74,7 @@ public class Board {
     for (int i : List.of(1, 8)) {
       for (int j : List.of(3, 6)) {
         Color color = i == 1 ? Color.WHITE : Color.BLACK;
-        Cell cell = cells[8 - i][8 - j];
+        Cell cell = cells[i - 1][j - 1];
         cell.setPiece(new Bishop(color, cell.getPos()));
       }
     }
@@ -71,14 +82,14 @@ public class Board {
     // Queens
     for (int i : List.of(1, 8)) {
       Color color = i == 1 ? Color.WHITE : Color.BLACK;
-      Cell cell = cells[8 - i][3];
+      Cell cell = cells[i - 1][3];
       cell.setPiece(new Queen(color, cell.getPos()));
     }
 
     // Kings
     for (int i : List.of(1, 8)) {
       Color color = i == 1 ? Color.WHITE : Color.BLACK;
-      Cell cell = cells[8 - i][4];
+      Cell cell = cells[i - 1][4];
       cell.setPiece(new King(color, cell.getPos()));
     }
 

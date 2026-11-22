@@ -23,12 +23,20 @@ public class Cell {
     return piece;
   }
 
+  public boolean isEmpty() {
+    return piece == null;
+  }
+
   public Pos getPos() {
     return pos;
   }
 
   public Color getColor() {
     return color;
+  }
+
+  public void removePiece() {
+    this.piece = null;
   }
 
   public Piece setPiece(Piece piece) {

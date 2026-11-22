@@ -10,4 +10,8 @@ public record Pos(int x, int y) {
     return new Pos(x - another.x, y - another.y);
   }
 
+  Pos mult(int factor) {
+    return new Pos(x * factor, y * factor);
+  }
+
 }
