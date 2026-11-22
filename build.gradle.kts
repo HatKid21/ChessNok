@@ -11,7 +11,7 @@ dependencies{
 }
 
 application{
-  mainClass.set("Main")
+  mainClass.set("me.hatkid.Main")
 }
 
 tasks.named<JavaExec>("run"){
@@ -20,6 +20,6 @@ tasks.named<JavaExec>("run"){
 
 tasks.jar{
   manifest{
-    attributes["Main-Class"] = "Main"
+    attributes["Main-Class"] = "me.hatkid.Main"
   }
 }
